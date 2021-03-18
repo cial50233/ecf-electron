@@ -8,7 +8,7 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  win.setMenu(null),
+  win.setMenuBarVisibility(false),
   win.loadFile('index.html')
 }
 

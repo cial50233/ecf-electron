@@ -13,13 +13,13 @@ async function doFetch(endpoint) {
 
 function display(data, selector) {
     const container = document.querySelector(selector);
-    container.innerHTML = data.content;
+    container.innerHTML = data.name;
     container.classList.add('be-bold');
 }
 
 async function fetchA() {
     const data = await doFetch('AF');
-    display(data.name, '#component-a');
+    display(data, '#component-a');
 }
 
 async function fetchB() {
