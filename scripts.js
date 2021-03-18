@@ -1,3 +1,5 @@
+let order = 1;
+
 async function doFetch(endpoint) {
     try {
         const resp = await fetch("https://restcountries.eu/rest/v2/alpha/" + endpoint, { method: 'GET' });
@@ -13,7 +15,7 @@ async function doFetch(endpoint) {
 
 function display(data, selector) {
     const container = document.querySelector(selector);
-    container.innerHTML = data.name;
+    container.innerHTML = data.name + ' in position : '+ order++;
     container.classList.add('be-bold');
 }
 
@@ -42,4 +44,5 @@ function fetchAndDisplayData() {
     fetchB();
     fetchC();
     fetchD();
+    order = 1;
 }
